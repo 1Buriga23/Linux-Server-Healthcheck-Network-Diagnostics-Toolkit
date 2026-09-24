@@ -30,25 +30,6 @@ Cоздать простой набор инструментов для пров
 * ping
 * curl
 
-## Структура проекта
-
-linux-admin-toolkit/
-├── README.md
-├── scripts/
-│   ├── system_report.sh
-│   ├── check_service.sh
-│   ├── disk_check.sh
-│   ├── memory_check.sh
-│   ├── nginx_healthcheck.sh
-│   ├── network_report.sh
-│   ├── port_check.sh
-│   ├── http_check.sh
-│   └── full_healthcheck.sh
-├── reports/
-│   └── example_report.txt
-└── notes/
-    └── troubleshooting.md
-
 ## Скрипты
 
 | Скрипт               | Назначение                                                   |
