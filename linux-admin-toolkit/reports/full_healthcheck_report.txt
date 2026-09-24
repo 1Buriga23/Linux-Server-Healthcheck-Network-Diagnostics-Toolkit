@@ -1,0 +1,2332 @@
+========================================
+FULL LINUX HEALTHCHECK REPORT
+========================================
+
+Дата проверки:
+2026-06-12 12:32:01
+
+===== SYSTEM REPORT =====
+
+User:
+	kirill_work_devops
+
+Hostname:
+	DESKTOP-OP9JNCS
+
+Uptime:
+	 12:32:01 up  1:11,  1 user,  load average: 0.00, 0.00, 0.00
+
+Disk usage for /:
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdd       1007G  1.7G  954G   1% /
+
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi       606Mi        14Gi       3.5Mi       264Mi        14Gi
+Swap:          4.0Gi          0B       4.0Gi
+
+
+===== DISK CHECK =====
+
+
+Раздел: /
+Использовано: 1%
+ОК: места на диске достаточно
+
+===== ПРОВЕРКА ПАМЯТИ =====
+
+Оперативная память:
+Всего: 15Gi
+Использовано: 607Mi
+Процент использования: 3%
+
+Swap:
+Всего: 4.0Gi
+Использовано: 0B
+
+ОК: использование оперативной памяти в норме
+
+SERVICE CHECK: nginx
+OK: служба nginx работает
+
+===== ПРОВЕРКА NGINX =====
+Проверка наличия nginx:
+ОК: nginx установлен
+
+Проверка состояния службы:
+ОК: служба nginx активна
+
+Проверка авто-запуска:
+ОК: nginx включён в автозапуск
+
+ИТОГ: nginx работает корректно
+
+===== СЕТЕВОЙ ОТЧЁТ =====
+IP-адреса:
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet 10.255.255.254/32 brd 10.255.255.254 scope global lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host proto kernel_lo 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1280 qdisc mq state UP group default qlen 1000
+    link/ether 00:15:5d:a0:51:0d brd ff:ff:ff:ff:ff:ff
+    altname enx00155da0510d
+    inet 172.30.173.241/20 brd 172.30.175.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::215:5dff:fea0:510d/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+
+Маршруты:
+default via 172.30.160.1 dev eth0 proto kernel 
+172.30.160.0/20 dev eth0 proto kernel scope link src 172.30.173.241 
+
+Проверка доступа к внешнему IP:
+ОК: внешний IP доступен
+
+Проверка DNS:
+ОК: доменное имя успешно резолвится
+
+===== ПРОВЕРКА ПОРТОВ =====
+
+Открытые listening-порты:
+Netid State  Recv-Q Send-Q  Local Address:Port Peer Address:Port
+udp   UNCONN 0      0          127.0.0.54:53        0.0.0.0:*   
+udp   UNCONN 0      0       127.0.0.53%lo:53        0.0.0.0:*   
+udp   UNCONN 0      0      10.255.255.254:53        0.0.0.0:*   
+udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*   
+udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*   
+udp   UNCONN 0      0               [::1]:323          [::]:*   
+udp   UNCONN 0      0               [::1]:323          [::]:*   
+tcp   LISTEN 0      1000   10.255.255.254:53        0.0.0.0:*   
+tcp   LISTEN 0      4096    127.0.0.53%lo:53        0.0.0.0:*   
+tcp   LISTEN 0      4096          0.0.0.0:22        0.0.0.0:*   
+tcp   LISTEN 0      511           0.0.0.0:80        0.0.0.0:*   
+tcp   LISTEN 0      4096       127.0.0.54:53        0.0.0.0:*   
+tcp   LISTEN 0      4096             [::]:22           [::]:*   
+tcp   LISTEN 0      511              [::]:80           [::]:*   
+
+Проверка порта 80:
+tcp   LISTEN 0      511           0.0.0.0:80        0.0.0.0:*   
+tcp   LISTEN 0      511              [::]:80           [::]:*   
+ОК: порт 80 слушается
+
+===== ПРОВЕРКА HTTP =====
+
+URL: http://localhost
+HTTP-код: 200
+ОК: успешный ответ
+
+===== ПРОВЕРКА ЛОГОВ СЛУЖБЫ =====
+
+Служба: nginx
+
+Последние записи журнала:
+Jun 12 01:03:21 DESKTOP-OP9JNCS systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+Jun 12 01:03:21 DESKTOP-OP9JNCS systemd[1]: nginx.service: Deactivated successfully.
+Jun 12 01:03:21 DESKTOP-OP9JNCS systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+-- Boot dbabd2ec757545b3af586e1814daa3d4 --
+Jun 12 11:20:29 DESKTOP-OP9JNCS systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Jun 12 11:20:29 DESKTOP-OP9JNCS systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+Jun 12 11:39:59 DESKTOP-OP9JNCS systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+Jun 12 11:39:59 DESKTOP-OP9JNCS systemd[1]: nginx.service: Deactivated successfully.
+Jun 12 11:39:59 DESKTOP-OP9JNCS systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+Jun 12 11:39:59 DESKTOP-OP9JNCS systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Jun 12 11:39:59 DESKTOP-OP9JNCS systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+
+Результат:
+ОК: явных ошибок в последних логах не найдено
+
+========================================
+ИТОГ: комплексная проверка завершена
+========================================
+========================================
+FULL LINUX HEALTHCHECK REPORT
+========================================
+
+Дата проверки:
+2026-06-15 00:00:01
+
+===== SYSTEM REPORT =====
+
+User:
+	kirill_work_devops
+
+Hostname:
+	DESKTOP-OP9JNCS
+
+Uptime:
+	 00:00:01 up 20 min,  1 user,  load average: 0.00, 0.00, 0.06
+
+Disk usage for /:
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdd       1007G  1.9G  954G   1% /
+
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi       641Mi        14Gi        34Mi       241Mi        14Gi
+Swap:          4.0Gi          0B       4.0Gi
+
+
+===== DISK CHECK =====
+
+
+Раздел: /
+Использовано: 1%
+ОК: места на диске достаточно
+
+===== ПРОВЕРКА ПАМЯТИ =====
+
+Оперативная память:
+Всего: 15Gi
+Использовано: 642Mi
+Процент использования: 4%
+
+Swap:
+Всего: 4.0Gi
+Использовано: 0B
+
+ОК: использование оперативной памяти в норме
+
+SERVICE CHECK: nginx
+OK: служба nginx работает
+
+===== ПРОВЕРКА NGINX =====
+Проверка наличия nginx:
+ОК: nginx установлен
+
+Проверка состояния службы:
+ОК: служба nginx активна
+
+Проверка авто-запуска:
+ОК: nginx включён в автозапуск
+
+ИТОГ: nginx работает корректно
+
+===== СЕТЕВОЙ ОТЧЁТ =====
+IP-адреса:
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet 10.255.255.254/32 brd 10.255.255.254 scope global lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host proto kernel_lo 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1280 qdisc mq state UP group default qlen 1000
+    link/ether 00:15:5d:7b:66:6c brd ff:ff:ff:ff:ff:ff
+    altname enx00155d7b666c
+    inet 172.30.173.241/20 brd 172.30.175.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::215:5dff:fe7b:666c/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+
+Маршруты:
+default via 172.30.160.1 dev eth0 proto kernel 
+172.30.160.0/20 dev eth0 proto kernel scope link src 172.30.173.241 
+
+Проверка доступа к внешнему IP:
+ОК: внешний IP доступен
+
+Проверка DNS:
+ОК: доменное имя успешно резолвится
+
+===== ПРОВЕРКА ПОРТОВ =====
+
+Открытые listening-порты:
+Netid State  Recv-Q Send-Q  Local Address:Port Peer Address:Port
+udp   UNCONN 0      0          127.0.0.54:53        0.0.0.0:*   
+udp   UNCONN 0      0       127.0.0.53%lo:53        0.0.0.0:*   
+udp   UNCONN 0      0      10.255.255.254:53        0.0.0.0:*   
+udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*   
+udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*   
+udp   UNCONN 0      0               [::1]:323          [::]:*   
+udp   UNCONN 0      0               [::1]:323          [::]:*   
+tcp   LISTEN 0      1000   10.255.255.254:53        0.0.0.0:*   
+tcp   LISTEN 0      4096       127.0.0.54:53        0.0.0.0:*   
+tcp   LISTEN 0      511           0.0.0.0:80        0.0.0.0:*   
+tcp   LISTEN 0      4096          0.0.0.0:22        0.0.0.0:*   
+tcp   LISTEN 0      4096    127.0.0.53%lo:53        0.0.0.0:*   
+tcp   LISTEN 0      200         127.0.0.1:5432      0.0.0.0:*   
+tcp   LISTEN 0      511              [::]:80           [::]:*   
+tcp   LISTEN 0      4096             [::]:22           [::]:*   
+
+Проверка порта 80:
+tcp   LISTEN 0      511           0.0.0.0:80        0.0.0.0:*   
+tcp   LISTEN 0      511              [::]:80           [::]:*   
+ОК: порт 80 слушается
+
+===== ПРОВЕРКА HTTP =====
+
+URL: http://localhost
+HTTP-код: 200
+ОК: успешный ответ
+
+===== ПРОВЕРКА ЛОГОВ СЛУЖБЫ =====
+
+Служба: nginx
+
+Последние записи журнала:
+Jun 12 11:39:59 DESKTOP-OP9JNCS systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+Jun 12 11:39:59 DESKTOP-OP9JNCS systemd[1]: nginx.service: Deactivated successfully.
+Jun 12 11:39:59 DESKTOP-OP9JNCS systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+Jun 12 11:39:59 DESKTOP-OP9JNCS systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Jun 12 11:39:59 DESKTOP-OP9JNCS systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: nginx.service: Deactivated successfully.
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+-- Boot 024e2bae7518498ea64b7a7739133cd9 --
+Jun 14 23:39:45 DESKTOP-OP9JNCS systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Jun 14 23:39:45 DESKTOP-OP9JNCS systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+
+Результат:
+ОК: явных ошибок в последних логах не найдено
+
+========================================
+ИТОГ: комплексная проверка завершена
+========================================
+========================================
+FULL LINUX HEALTHCHECK REPORT
+========================================
+
+Дата проверки:
+2026-06-15 01:00:01
+
+===== SYSTEM REPORT =====
+
+User:
+	kirill_work_devops
+
+Hostname:
+	DESKTOP-OP9JNCS
+
+Uptime:
+	 01:00:01 up  1:20,  1 user,  load average: 0.00, 0.00, 0.00
+
+Disk usage for /:
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdd       1007G  1.9G  954G   1% /
+
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi       662Mi        14Gi        34Mi       376Mi        14Gi
+Swap:          4.0Gi          0B       4.0Gi
+
+
+===== DISK CHECK =====
+
+
+Раздел: /
+Использовано: 1%
+ОК: места на диске достаточно
+
+===== ПРОВЕРКА ПАМЯТИ =====
+
+Оперативная память:
+Всего: 15Gi
+Использовано: 663Mi
+Процент использования: 4%
+
+Swap:
+Всего: 4.0Gi
+Использовано: 0B
+
+ОК: использование оперативной памяти в норме
+
+SERVICE CHECK: nginx
+OK: служба nginx работает
+
+===== ПРОВЕРКА NGINX =====
+Проверка наличия nginx:
+ОК: nginx установлен
+
+Проверка состояния службы:
+ОК: служба nginx активна
+
+Проверка авто-запуска:
+ОК: nginx включён в автозапуск
+
+ИТОГ: nginx работает корректно
+
+===== СЕТЕВОЙ ОТЧЁТ =====
+IP-адреса:
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet 10.255.255.254/32 brd 10.255.255.254 scope global lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host proto kernel_lo 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1280 qdisc mq state UP group default qlen 1000
+    link/ether 00:15:5d:7b:66:6c brd ff:ff:ff:ff:ff:ff
+    altname enx00155d7b666c
+    inet 172.30.173.241/20 brd 172.30.175.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::215:5dff:fe7b:666c/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+
+Маршруты:
+default via 172.30.160.1 dev eth0 proto kernel 
+172.30.160.0/20 dev eth0 proto kernel scope link src 172.30.173.241 
+
+Проверка доступа к внешнему IP:
+ОК: внешний IP доступен
+
+Проверка DNS:
+ОК: доменное имя успешно резолвится
+
+===== ПРОВЕРКА ПОРТОВ =====
+
+Открытые listening-порты:
+Netid State  Recv-Q Send-Q  Local Address:Port Peer Address:Port
+udp   UNCONN 0      0          127.0.0.54:53        0.0.0.0:*   
+udp   UNCONN 0      0       127.0.0.53%lo:53        0.0.0.0:*   
+udp   UNCONN 0      0      10.255.255.254:53        0.0.0.0:*   
+udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*   
+udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*   
+udp   UNCONN 0      0               [::1]:323          [::]:*   
+udp   UNCONN 0      0               [::1]:323          [::]:*   
+tcp   LISTEN 0      1000   10.255.255.254:53        0.0.0.0:*   
+tcp   LISTEN 0      4096       127.0.0.54:53        0.0.0.0:*   
+tcp   LISTEN 0      511           0.0.0.0:80        0.0.0.0:*   
+tcp   LISTEN 0      4096          0.0.0.0:22        0.0.0.0:*   
+tcp   LISTEN 0      4096    127.0.0.53%lo:53        0.0.0.0:*   
+tcp   LISTEN 0      200         127.0.0.1:5432      0.0.0.0:*   
+tcp   LISTEN 0      511              [::]:80           [::]:*   
+tcp   LISTEN 0      4096             [::]:22           [::]:*   
+
+Проверка порта 80:
+tcp   LISTEN 0      511           0.0.0.0:80        0.0.0.0:*   
+tcp   LISTEN 0      511              [::]:80           [::]:*   
+ОК: порт 80 слушается
+
+===== ПРОВЕРКА HTTP =====
+
+URL: http://localhost
+HTTP-код: 200
+ОК: успешный ответ
+
+===== ПРОВЕРКА ЛОГОВ СЛУЖБЫ =====
+
+Служба: nginx
+
+Последние записи журнала:
+Jun 12 11:39:59 DESKTOP-OP9JNCS systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+Jun 12 11:39:59 DESKTOP-OP9JNCS systemd[1]: nginx.service: Deactivated successfully.
+Jun 12 11:39:59 DESKTOP-OP9JNCS systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+Jun 12 11:39:59 DESKTOP-OP9JNCS systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Jun 12 11:39:59 DESKTOP-OP9JNCS systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: nginx.service: Deactivated successfully.
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+-- Boot 024e2bae7518498ea64b7a7739133cd9 --
+Jun 14 23:39:45 DESKTOP-OP9JNCS systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Jun 14 23:39:45 DESKTOP-OP9JNCS systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+
+Результат:
+ОК: явных ошибок в последних логах не найдено
+
+========================================
+ИТОГ: комплексная проверка завершена
+========================================
+========================================
+FULL LINUX HEALTHCHECK REPORT
+========================================
+
+Дата проверки:
+2026-06-15 14:00:01
+
+===== SYSTEM REPORT =====
+
+User:
+	kirill_work_devops
+
+Hostname:
+	DESKTOP-OP9JNCS
+
+Uptime:
+	 14:00:01 up 21 min,  1 user,  load average: 0.00, 0.00, 0.00
+
+Disk usage for /:
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdd       1007G  1.9G  954G   1% /
+
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi       639Mi        14Gi        22Mi       217Mi        14Gi
+Swap:          4.0Gi          0B       4.0Gi
+
+
+===== DISK CHECK =====
+
+
+Раздел: /
+Использовано: 1%
+ОК: места на диске достаточно
+
+===== ПРОВЕРКА ПАМЯТИ =====
+
+Оперативная память:
+Всего: 15Gi
+Использовано: 640Mi
+Процент использования: 4%
+
+Swap:
+Всего: 4.0Gi
+Использовано: 0B
+
+ОК: использование оперативной памяти в норме
+
+SERVICE CHECK: nginx
+OK: служба nginx работает
+
+===== ПРОВЕРКА NGINX =====
+Проверка наличия nginx:
+ОК: nginx установлен
+
+Проверка состояния службы:
+ОК: служба nginx активна
+
+Проверка авто-запуска:
+ОК: nginx включён в автозапуск
+
+ИТОГ: nginx работает корректно
+
+===== СЕТЕВОЙ ОТЧЁТ =====
+IP-адреса:
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet 10.255.255.254/32 brd 10.255.255.254 scope global lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host proto kernel_lo 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1280 qdisc mq state UP group default qlen 1000
+    link/ether 00:15:5d:14:27:25 brd ff:ff:ff:ff:ff:ff
+    altname enx00155d142725
+    inet 172.30.173.241/20 brd 172.30.175.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::215:5dff:fe14:2725/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+
+Маршруты:
+default via 172.30.160.1 dev eth0 proto kernel 
+172.30.160.0/20 dev eth0 proto kernel scope link src 172.30.173.241 
+
+Проверка доступа к внешнему IP:
+ОК: внешний IP доступен
+
+Проверка DNS:
+ОК: доменное имя успешно резолвится
+
+===== ПРОВЕРКА ПОРТОВ =====
+
+Открытые listening-порты:
+Netid State  Recv-Q Send-Q  Local Address:Port Peer Address:Port
+udp   UNCONN 0      0          127.0.0.54:53        0.0.0.0:*   
+udp   UNCONN 0      0       127.0.0.53%lo:53        0.0.0.0:*   
+udp   UNCONN 0      0      10.255.255.254:53        0.0.0.0:*   
+udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*   
+udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*   
+udp   UNCONN 0      0               [::1]:323          [::]:*   
+udp   UNCONN 0      0               [::1]:323          [::]:*   
+tcp   LISTEN 0      4096       127.0.0.54:53        0.0.0.0:*   
+tcp   LISTEN 0      511           0.0.0.0:80        0.0.0.0:*   
+tcp   LISTEN 0      4096          0.0.0.0:22        0.0.0.0:*   
+tcp   LISTEN 0      4096    127.0.0.53%lo:53        0.0.0.0:*   
+tcp   LISTEN 0      1000   10.255.255.254:53        0.0.0.0:*   
+tcp   LISTEN 0      200         127.0.0.1:5432      0.0.0.0:*   
+tcp   LISTEN 0      511              [::]:80           [::]:*   
+tcp   LISTEN 0      4096             [::]:22           [::]:*   
+
+Проверка порта 80:
+tcp   LISTEN 0      511           0.0.0.0:80        0.0.0.0:*   
+tcp   LISTEN 0      511              [::]:80           [::]:*   
+ОК: порт 80 слушается
+
+===== ПРОВЕРКА HTTP =====
+
+URL: http://localhost
+HTTP-код: 200
+ОК: успешный ответ
+
+===== ПРОВЕРКА ЛОГОВ СЛУЖБЫ =====
+
+Служба: nginx
+
+Последние записи журнала:
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: nginx.service: Deactivated successfully.
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+-- Boot 024e2bae7518498ea64b7a7739133cd9 --
+Jun 14 23:39:45 DESKTOP-OP9JNCS systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Jun 14 23:39:45 DESKTOP-OP9JNCS systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+Jun 15 01:08:06 DESKTOP-OP9JNCS systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+Jun 15 01:08:06 DESKTOP-OP9JNCS systemd[1]: nginx.service: Deactivated successfully.
+Jun 15 01:08:06 DESKTOP-OP9JNCS systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+-- Boot dd888e58fe1044b0acd41d85f65478d0 --
+Jun 15 13:38:26 DESKTOP-OP9JNCS systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Jun 15 13:38:26 DESKTOP-OP9JNCS systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+
+Результат:
+ОК: явных ошибок в последних логах не найдено
+
+========================================
+ИТОГ: комплексная проверка завершена
+========================================
+========================================
+FULL LINUX HEALTHCHECK REPORT
+========================================
+
+Дата проверки:
+2026-06-15 15:00:01
+
+===== SYSTEM REPORT =====
+
+User:
+	kirill_work_devops
+
+Hostname:
+	DESKTOP-OP9JNCS
+
+Uptime:
+	 15:00:01 up  1:21,  1 user,  load average: 0.00, 0.00, 0.00
+
+Disk usage for /:
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdd       1007G  1.9G  954G   1% /
+
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi       634Mi        14Gi        22Mi       315Mi        14Gi
+Swap:          4.0Gi          0B       4.0Gi
+
+
+===== DISK CHECK =====
+
+
+Раздел: /
+Использовано: 1%
+ОК: места на диске достаточно
+
+===== ПРОВЕРКА ПАМЯТИ =====
+
+Оперативная память:
+Всего: 15Gi
+Использовано: 634Mi
+Процент использования: 3%
+
+Swap:
+Всего: 4.0Gi
+Использовано: 0B
+
+ОК: использование оперативной памяти в норме
+
+SERVICE CHECK: nginx
+OK: служба nginx работает
+
+===== ПРОВЕРКА NGINX =====
+Проверка наличия nginx:
+ОК: nginx установлен
+
+Проверка состояния службы:
+ОК: служба nginx активна
+
+Проверка авто-запуска:
+ОК: nginx включён в автозапуск
+
+ИТОГ: nginx работает корректно
+
+===== СЕТЕВОЙ ОТЧЁТ =====
+IP-адреса:
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet 10.255.255.254/32 brd 10.255.255.254 scope global lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host proto kernel_lo 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1280 qdisc mq state UP group default qlen 1000
+    link/ether 00:15:5d:14:27:25 brd ff:ff:ff:ff:ff:ff
+    altname enx00155d142725
+    inet 172.30.173.241/20 brd 172.30.175.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::215:5dff:fe14:2725/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+
+Маршруты:
+default via 172.30.160.1 dev eth0 proto kernel 
+172.30.160.0/20 dev eth0 proto kernel scope link src 172.30.173.241 
+
+Проверка доступа к внешнему IP:
+ОК: внешний IP доступен
+
+Проверка DNS:
+ОК: доменное имя успешно резолвится
+
+===== ПРОВЕРКА ПОРТОВ =====
+
+Открытые listening-порты:
+Netid State  Recv-Q Send-Q  Local Address:Port Peer Address:Port
+udp   UNCONN 0      0          127.0.0.54:53        0.0.0.0:*   
+udp   UNCONN 0      0       127.0.0.53%lo:53        0.0.0.0:*   
+udp   UNCONN 0      0      10.255.255.254:53        0.0.0.0:*   
+udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*   
+udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*   
+udp   UNCONN 0      0               [::1]:323          [::]:*   
+udp   UNCONN 0      0               [::1]:323          [::]:*   
+tcp   LISTEN 0      4096       127.0.0.54:53        0.0.0.0:*   
+tcp   LISTEN 0      511           0.0.0.0:80        0.0.0.0:*   
+tcp   LISTEN 0      4096          0.0.0.0:22        0.0.0.0:*   
+tcp   LISTEN 0      4096    127.0.0.53%lo:53        0.0.0.0:*   
+tcp   LISTEN 0      1000   10.255.255.254:53        0.0.0.0:*   
+tcp   LISTEN 0      200         127.0.0.1:5432      0.0.0.0:*   
+tcp   LISTEN 0      511              [::]:80           [::]:*   
+tcp   LISTEN 0      4096             [::]:22           [::]:*   
+
+Проверка порта 80:
+tcp   LISTEN 0      511           0.0.0.0:80        0.0.0.0:*   
+tcp   LISTEN 0      511              [::]:80           [::]:*   
+ОК: порт 80 слушается
+
+===== ПРОВЕРКА HTTP =====
+
+URL: http://localhost
+HTTP-код: 200
+ОК: успешный ответ
+
+===== ПРОВЕРКА ЛОГОВ СЛУЖБЫ =====
+
+Служба: nginx
+
+Последние записи журнала:
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: nginx.service: Deactivated successfully.
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+-- Boot 024e2bae7518498ea64b7a7739133cd9 --
+Jun 14 23:39:45 DESKTOP-OP9JNCS systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Jun 14 23:39:45 DESKTOP-OP9JNCS systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+Jun 15 01:08:06 DESKTOP-OP9JNCS systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+Jun 15 01:08:06 DESKTOP-OP9JNCS systemd[1]: nginx.service: Deactivated successfully.
+Jun 15 01:08:06 DESKTOP-OP9JNCS systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+-- Boot dd888e58fe1044b0acd41d85f65478d0 --
+Jun 15 13:38:26 DESKTOP-OP9JNCS systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Jun 15 13:38:26 DESKTOP-OP9JNCS systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+
+Результат:
+ОК: явных ошибок в последних логах не найдено
+
+========================================
+ИТОГ: комплексная проверка завершена
+========================================
+========================================
+FULL LINUX HEALTHCHECK REPORT
+========================================
+
+Дата проверки:
+2026-06-15 16:00:01
+
+===== SYSTEM REPORT =====
+
+User:
+	kirill_work_devops
+
+Hostname:
+	DESKTOP-OP9JNCS
+
+Uptime:
+	 16:00:01 up  2:21,  1 user,  load average: 0.00, 0.00, 0.00
+
+Disk usage for /:
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdd       1007G  1.9G  954G   1% /
+
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi       640Mi        14Gi        22Mi       317Mi        14Gi
+Swap:          4.0Gi          0B       4.0Gi
+
+
+===== DISK CHECK =====
+
+
+Раздел: /
+Использовано: 1%
+ОК: места на диске достаточно
+
+===== ПРОВЕРКА ПАМЯТИ =====
+
+Оперативная память:
+Всего: 15Gi
+Использовано: 641Mi
+Процент использования: 4%
+
+Swap:
+Всего: 4.0Gi
+Использовано: 0B
+
+ОК: использование оперативной памяти в норме
+
+SERVICE CHECK: nginx
+OK: служба nginx работает
+
+===== ПРОВЕРКА NGINX =====
+Проверка наличия nginx:
+ОК: nginx установлен
+
+Проверка состояния службы:
+ОК: служба nginx активна
+
+Проверка авто-запуска:
+ОК: nginx включён в автозапуск
+
+ИТОГ: nginx работает корректно
+
+===== СЕТЕВОЙ ОТЧЁТ =====
+IP-адреса:
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet 10.255.255.254/32 brd 10.255.255.254 scope global lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host proto kernel_lo 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1280 qdisc mq state UP group default qlen 1000
+    link/ether 00:15:5d:14:27:25 brd ff:ff:ff:ff:ff:ff
+    altname enx00155d142725
+    inet 172.30.173.241/20 brd 172.30.175.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::215:5dff:fe14:2725/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+
+Маршруты:
+default via 172.30.160.1 dev eth0 proto kernel 
+172.30.160.0/20 dev eth0 proto kernel scope link src 172.30.173.241 
+
+Проверка доступа к внешнему IP:
+ОК: внешний IP доступен
+
+Проверка DNS:
+ОК: доменное имя успешно резолвится
+
+===== ПРОВЕРКА ПОРТОВ =====
+
+Открытые listening-порты:
+Netid State  Recv-Q Send-Q  Local Address:Port Peer Address:Port
+udp   UNCONN 0      0          127.0.0.54:53        0.0.0.0:*   
+udp   UNCONN 0      0       127.0.0.53%lo:53        0.0.0.0:*   
+udp   UNCONN 0      0      10.255.255.254:53        0.0.0.0:*   
+udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*   
+udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*   
+udp   UNCONN 0      0               [::1]:323          [::]:*   
+udp   UNCONN 0      0               [::1]:323          [::]:*   
+tcp   LISTEN 0      4096       127.0.0.54:53        0.0.0.0:*   
+tcp   LISTEN 0      511           0.0.0.0:80        0.0.0.0:*   
+tcp   LISTEN 0      4096          0.0.0.0:22        0.0.0.0:*   
+tcp   LISTEN 0      4096    127.0.0.53%lo:53        0.0.0.0:*   
+tcp   LISTEN 0      1000   10.255.255.254:53        0.0.0.0:*   
+tcp   LISTEN 0      200         127.0.0.1:5432      0.0.0.0:*   
+tcp   LISTEN 0      511              [::]:80           [::]:*   
+tcp   LISTEN 0      4096             [::]:22           [::]:*   
+
+Проверка порта 80:
+tcp   LISTEN 0      511           0.0.0.0:80        0.0.0.0:*   
+tcp   LISTEN 0      511              [::]:80           [::]:*   
+ОК: порт 80 слушается
+
+===== ПРОВЕРКА HTTP =====
+
+URL: http://localhost
+HTTP-код: 200
+ОК: успешный ответ
+
+===== ПРОВЕРКА ЛОГОВ СЛУЖБЫ =====
+
+Служба: nginx
+
+Последние записи журнала:
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: nginx.service: Deactivated successfully.
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+-- Boot 024e2bae7518498ea64b7a7739133cd9 --
+Jun 14 23:39:45 DESKTOP-OP9JNCS systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Jun 14 23:39:45 DESKTOP-OP9JNCS systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+Jun 15 01:08:06 DESKTOP-OP9JNCS systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+Jun 15 01:08:06 DESKTOP-OP9JNCS systemd[1]: nginx.service: Deactivated successfully.
+Jun 15 01:08:06 DESKTOP-OP9JNCS systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+-- Boot dd888e58fe1044b0acd41d85f65478d0 --
+Jun 15 13:38:26 DESKTOP-OP9JNCS systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Jun 15 13:38:26 DESKTOP-OP9JNCS systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+
+Результат:
+ОК: явных ошибок в последних логах не найдено
+
+========================================
+ИТОГ: комплексная проверка завершена
+========================================
+========================================
+FULL LINUX HEALTHCHECK REPORT
+========================================
+
+Дата проверки:
+2026-06-15 17:00:01
+
+===== SYSTEM REPORT =====
+
+User:
+	kirill_work_devops
+
+Hostname:
+	DESKTOP-OP9JNCS
+
+Uptime:
+	 17:00:01 up  3:21,  1 user,  load average: 0.00, 0.00, 0.00
+
+Disk usage for /:
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdd       1007G  1.9G  954G   1% /
+
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi       643Mi        14Gi        22Mi       332Mi        14Gi
+Swap:          4.0Gi          0B       4.0Gi
+
+
+===== DISK CHECK =====
+
+
+Раздел: /
+Использовано: 1%
+ОК: места на диске достаточно
+
+===== ПРОВЕРКА ПАМЯТИ =====
+
+Оперативная память:
+Всего: 15Gi
+Использовано: 645Mi
+Процент использования: 4%
+
+Swap:
+Всего: 4.0Gi
+Использовано: 0B
+
+ОК: использование оперативной памяти в норме
+
+SERVICE CHECK: nginx
+OK: служба nginx работает
+
+===== ПРОВЕРКА NGINX =====
+Проверка наличия nginx:
+ОК: nginx установлен
+
+Проверка состояния службы:
+ОК: служба nginx активна
+
+Проверка авто-запуска:
+ОК: nginx включён в автозапуск
+
+ИТОГ: nginx работает корректно
+
+===== СЕТЕВОЙ ОТЧЁТ =====
+IP-адреса:
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet 10.255.255.254/32 brd 10.255.255.254 scope global lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host proto kernel_lo 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1280 qdisc mq state UP group default qlen 1000
+    link/ether 00:15:5d:14:27:25 brd ff:ff:ff:ff:ff:ff
+    altname enx00155d142725
+    inet 172.30.173.241/20 brd 172.30.175.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::215:5dff:fe14:2725/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+
+Маршруты:
+default via 172.30.160.1 dev eth0 proto kernel 
+172.30.160.0/20 dev eth0 proto kernel scope link src 172.30.173.241 
+
+Проверка доступа к внешнему IP:
+ОК: внешний IP доступен
+
+Проверка DNS:
+ОК: доменное имя успешно резолвится
+
+===== ПРОВЕРКА ПОРТОВ =====
+
+Открытые listening-порты:
+Netid State  Recv-Q Send-Q  Local Address:Port Peer Address:Port
+udp   UNCONN 0      0          127.0.0.54:53        0.0.0.0:*   
+udp   UNCONN 0      0       127.0.0.53%lo:53        0.0.0.0:*   
+udp   UNCONN 0      0      10.255.255.254:53        0.0.0.0:*   
+udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*   
+udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*   
+udp   UNCONN 0      0               [::1]:323          [::]:*   
+udp   UNCONN 0      0               [::1]:323          [::]:*   
+tcp   LISTEN 0      4096       127.0.0.54:53        0.0.0.0:*   
+tcp   LISTEN 0      511           0.0.0.0:80        0.0.0.0:*   
+tcp   LISTEN 0      4096          0.0.0.0:22        0.0.0.0:*   
+tcp   LISTEN 0      4096    127.0.0.53%lo:53        0.0.0.0:*   
+tcp   LISTEN 0      1000   10.255.255.254:53        0.0.0.0:*   
+tcp   LISTEN 0      200         127.0.0.1:5432      0.0.0.0:*   
+tcp   LISTEN 0      511              [::]:80           [::]:*   
+tcp   LISTEN 0      4096             [::]:22           [::]:*   
+
+Проверка порта 80:
+tcp   LISTEN 0      511           0.0.0.0:80        0.0.0.0:*   
+tcp   LISTEN 0      511              [::]:80           [::]:*   
+ОК: порт 80 слушается
+
+===== ПРОВЕРКА HTTP =====
+
+URL: http://localhost
+HTTP-код: 200
+ОК: успешный ответ
+
+===== ПРОВЕРКА ЛОГОВ СЛУЖБЫ =====
+
+Служба: nginx
+
+Последние записи журнала:
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: nginx.service: Deactivated successfully.
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+-- Boot 024e2bae7518498ea64b7a7739133cd9 --
+Jun 14 23:39:45 DESKTOP-OP9JNCS systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Jun 14 23:39:45 DESKTOP-OP9JNCS systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+Jun 15 01:08:06 DESKTOP-OP9JNCS systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+Jun 15 01:08:06 DESKTOP-OP9JNCS systemd[1]: nginx.service: Deactivated successfully.
+Jun 15 01:08:06 DESKTOP-OP9JNCS systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+-- Boot dd888e58fe1044b0acd41d85f65478d0 --
+Jun 15 13:38:26 DESKTOP-OP9JNCS systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Jun 15 13:38:26 DESKTOP-OP9JNCS systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+
+Результат:
+ОК: явных ошибок в последних логах не найдено
+
+========================================
+ИТОГ: комплексная проверка завершена
+========================================
+========================================
+FULL LINUX HEALTHCHECK REPORT
+========================================
+
+Дата проверки:
+2026-06-15 18:00:01
+
+===== SYSTEM REPORT =====
+
+User:
+	kirill_work_devops
+
+Hostname:
+	DESKTOP-OP9JNCS
+
+Uptime:
+	 18:00:01 up  4:21,  1 user,  load average: 0.00, 0.00, 0.00
+
+Disk usage for /:
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdd       1007G  1.9G  954G   1% /
+
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi       642Mi        14Gi        22Mi       333Mi        14Gi
+Swap:          4.0Gi          0B       4.0Gi
+
+
+===== DISK CHECK =====
+
+
+Раздел: /
+Использовано: 1%
+ОК: места на диске достаточно
+
+===== ПРОВЕРКА ПАМЯТИ =====
+
+Оперативная память:
+Всего: 15Gi
+Использовано: 643Mi
+Процент использования: 4%
+
+Swap:
+Всего: 4.0Gi
+Использовано: 0B
+
+ОК: использование оперативной памяти в норме
+
+SERVICE CHECK: nginx
+OK: служба nginx работает
+
+===== ПРОВЕРКА NGINX =====
+Проверка наличия nginx:
+ОК: nginx установлен
+
+Проверка состояния службы:
+ОК: служба nginx активна
+
+Проверка авто-запуска:
+ОК: nginx включён в автозапуск
+
+ИТОГ: nginx работает корректно
+
+===== СЕТЕВОЙ ОТЧЁТ =====
+IP-адреса:
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet 10.255.255.254/32 brd 10.255.255.254 scope global lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host proto kernel_lo 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1280 qdisc mq state UP group default qlen 1000
+    link/ether 00:15:5d:14:27:25 brd ff:ff:ff:ff:ff:ff
+    altname enx00155d142725
+    inet 172.30.173.241/20 brd 172.30.175.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::215:5dff:fe14:2725/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+
+Маршруты:
+default via 172.30.160.1 dev eth0 proto kernel 
+172.30.160.0/20 dev eth0 proto kernel scope link src 172.30.173.241 
+
+Проверка доступа к внешнему IP:
+ОК: внешний IP доступен
+
+Проверка DNS:
+ОК: доменное имя успешно резолвится
+
+===== ПРОВЕРКА ПОРТОВ =====
+
+Открытые listening-порты:
+Netid State  Recv-Q Send-Q  Local Address:Port Peer Address:Port
+udp   UNCONN 0      0          127.0.0.54:53        0.0.0.0:*   
+udp   UNCONN 0      0       127.0.0.53%lo:53        0.0.0.0:*   
+udp   UNCONN 0      0      10.255.255.254:53        0.0.0.0:*   
+udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*   
+udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*   
+udp   UNCONN 0      0               [::1]:323          [::]:*   
+udp   UNCONN 0      0               [::1]:323          [::]:*   
+tcp   LISTEN 0      4096       127.0.0.54:53        0.0.0.0:*   
+tcp   LISTEN 0      511           0.0.0.0:80        0.0.0.0:*   
+tcp   LISTEN 0      4096          0.0.0.0:22        0.0.0.0:*   
+tcp   LISTEN 0      4096    127.0.0.53%lo:53        0.0.0.0:*   
+tcp   LISTEN 0      1000   10.255.255.254:53        0.0.0.0:*   
+tcp   LISTEN 0      200         127.0.0.1:5432      0.0.0.0:*   
+tcp   LISTEN 0      511              [::]:80           [::]:*   
+tcp   LISTEN 0      4096             [::]:22           [::]:*   
+
+Проверка порта 80:
+tcp   LISTEN 0      511           0.0.0.0:80        0.0.0.0:*   
+tcp   LISTEN 0      511              [::]:80           [::]:*   
+ОК: порт 80 слушается
+
+===== ПРОВЕРКА HTTP =====
+
+URL: http://localhost
+HTTP-код: 200
+ОК: успешный ответ
+
+===== ПРОВЕРКА ЛОГОВ СЛУЖБЫ =====
+
+Служба: nginx
+
+Последние записи журнала:
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: nginx.service: Deactivated successfully.
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+-- Boot 024e2bae7518498ea64b7a7739133cd9 --
+Jun 14 23:39:45 DESKTOP-OP9JNCS systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Jun 14 23:39:45 DESKTOP-OP9JNCS systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+Jun 15 01:08:06 DESKTOP-OP9JNCS systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+Jun 15 01:08:06 DESKTOP-OP9JNCS systemd[1]: nginx.service: Deactivated successfully.
+Jun 15 01:08:06 DESKTOP-OP9JNCS systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+-- Boot dd888e58fe1044b0acd41d85f65478d0 --
+Jun 15 13:38:26 DESKTOP-OP9JNCS systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Jun 15 13:38:26 DESKTOP-OP9JNCS systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+
+Результат:
+ОК: явных ошибок в последних логах не найдено
+
+========================================
+ИТОГ: комплексная проверка завершена
+========================================
+========================================
+FULL LINUX HEALTHCHECK REPORT
+========================================
+
+Дата проверки:
+2026-06-15 19:00:01
+
+===== SYSTEM REPORT =====
+
+User:
+	kirill_work_devops
+
+Hostname:
+	DESKTOP-OP9JNCS
+
+Uptime:
+	 19:00:01 up  5:21,  1 user,  load average: 0.00, 0.00, 0.00
+
+Disk usage for /:
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdd       1007G  1.9G  954G   1% /
+
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi       643Mi        14Gi        22Mi       333Mi        14Gi
+Swap:          4.0Gi          0B       4.0Gi
+
+
+===== DISK CHECK =====
+
+
+Раздел: /
+Использовано: 1%
+ОК: места на диске достаточно
+
+===== ПРОВЕРКА ПАМЯТИ =====
+
+Оперативная память:
+Всего: 15Gi
+Использовано: 643Mi
+Процент использования: 4%
+
+Swap:
+Всего: 4.0Gi
+Использовано: 0B
+
+ОК: использование оперативной памяти в норме
+
+SERVICE CHECK: nginx
+OK: служба nginx работает
+
+===== ПРОВЕРКА NGINX =====
+Проверка наличия nginx:
+ОК: nginx установлен
+
+Проверка состояния службы:
+ОК: служба nginx активна
+
+Проверка авто-запуска:
+ОК: nginx включён в автозапуск
+
+ИТОГ: nginx работает корректно
+
+===== СЕТЕВОЙ ОТЧЁТ =====
+IP-адреса:
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet 10.255.255.254/32 brd 10.255.255.254 scope global lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host proto kernel_lo 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1280 qdisc mq state UP group default qlen 1000
+    link/ether 00:15:5d:14:27:25 brd ff:ff:ff:ff:ff:ff
+    altname enx00155d142725
+    inet 172.30.173.241/20 brd 172.30.175.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::215:5dff:fe14:2725/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+
+Маршруты:
+default via 172.30.160.1 dev eth0 proto kernel 
+172.30.160.0/20 dev eth0 proto kernel scope link src 172.30.173.241 
+
+Проверка доступа к внешнему IP:
+ОК: внешний IP доступен
+
+Проверка DNS:
+ОК: доменное имя успешно резолвится
+
+===== ПРОВЕРКА ПОРТОВ =====
+
+Открытые listening-порты:
+Netid State  Recv-Q Send-Q  Local Address:Port Peer Address:Port
+udp   UNCONN 0      0          127.0.0.54:53        0.0.0.0:*   
+udp   UNCONN 0      0       127.0.0.53%lo:53        0.0.0.0:*   
+udp   UNCONN 0      0      10.255.255.254:53        0.0.0.0:*   
+udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*   
+udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*   
+udp   UNCONN 0      0               [::1]:323          [::]:*   
+udp   UNCONN 0      0               [::1]:323          [::]:*   
+tcp   LISTEN 0      4096       127.0.0.54:53        0.0.0.0:*   
+tcp   LISTEN 0      511           0.0.0.0:80        0.0.0.0:*   
+tcp   LISTEN 0      4096          0.0.0.0:22        0.0.0.0:*   
+tcp   LISTEN 0      4096    127.0.0.53%lo:53        0.0.0.0:*   
+tcp   LISTEN 0      1000   10.255.255.254:53        0.0.0.0:*   
+tcp   LISTEN 0      200         127.0.0.1:5432      0.0.0.0:*   
+tcp   LISTEN 0      511              [::]:80           [::]:*   
+tcp   LISTEN 0      4096             [::]:22           [::]:*   
+
+Проверка порта 80:
+tcp   LISTEN 0      511           0.0.0.0:80        0.0.0.0:*   
+tcp   LISTEN 0      511              [::]:80           [::]:*   
+ОК: порт 80 слушается
+
+===== ПРОВЕРКА HTTP =====
+
+URL: http://localhost
+HTTP-код: 200
+ОК: успешный ответ
+
+===== ПРОВЕРКА ЛОГОВ СЛУЖБЫ =====
+
+Служба: nginx
+
+Последние записи журнала:
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: nginx.service: Deactivated successfully.
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+-- Boot 024e2bae7518498ea64b7a7739133cd9 --
+Jun 14 23:39:45 DESKTOP-OP9JNCS systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Jun 14 23:39:45 DESKTOP-OP9JNCS systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+Jun 15 01:08:06 DESKTOP-OP9JNCS systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+Jun 15 01:08:06 DESKTOP-OP9JNCS systemd[1]: nginx.service: Deactivated successfully.
+Jun 15 01:08:06 DESKTOP-OP9JNCS systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+-- Boot dd888e58fe1044b0acd41d85f65478d0 --
+Jun 15 13:38:26 DESKTOP-OP9JNCS systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Jun 15 13:38:26 DESKTOP-OP9JNCS systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+
+Результат:
+ОК: явных ошибок в последних логах не найдено
+
+========================================
+ИТОГ: комплексная проверка завершена
+========================================
+========================================
+FULL LINUX HEALTHCHECK REPORT
+========================================
+
+Дата проверки:
+2026-06-15 20:00:01
+
+===== SYSTEM REPORT =====
+
+User:
+	kirill_work_devops
+
+Hostname:
+	DESKTOP-OP9JNCS
+
+Uptime:
+	 20:00:01 up  6:21,  1 user,  load average: 0.00, 0.00, 0.00
+
+Disk usage for /:
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdd       1007G  1.9G  954G   1% /
+
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi       642Mi        14Gi        22Mi       299Mi        14Gi
+Swap:          4.0Gi          0B       4.0Gi
+
+
+===== DISK CHECK =====
+
+
+Раздел: /
+Использовано: 1%
+ОК: места на диске достаточно
+
+===== ПРОВЕРКА ПАМЯТИ =====
+
+Оперативная память:
+Всего: 15Gi
+Использовано: 642Mi
+Процент использования: 4%
+
+Swap:
+Всего: 4.0Gi
+Использовано: 0B
+
+ОК: использование оперативной памяти в норме
+
+SERVICE CHECK: nginx
+OK: служба nginx работает
+
+===== ПРОВЕРКА NGINX =====
+Проверка наличия nginx:
+ОК: nginx установлен
+
+Проверка состояния службы:
+ОК: служба nginx активна
+
+Проверка авто-запуска:
+ОК: nginx включён в автозапуск
+
+ИТОГ: nginx работает корректно
+
+===== СЕТЕВОЙ ОТЧЁТ =====
+IP-адреса:
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet 10.255.255.254/32 brd 10.255.255.254 scope global lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host proto kernel_lo 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1280 qdisc mq state UP group default qlen 1000
+    link/ether 00:15:5d:14:27:25 brd ff:ff:ff:ff:ff:ff
+    altname enx00155d142725
+    inet 172.30.173.241/20 brd 172.30.175.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::215:5dff:fe14:2725/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+
+Маршруты:
+default via 172.30.160.1 dev eth0 proto kernel 
+172.30.160.0/20 dev eth0 proto kernel scope link src 172.30.173.241 
+
+Проверка доступа к внешнему IP:
+ОК: внешний IP доступен
+
+Проверка DNS:
+ОК: доменное имя успешно резолвится
+
+===== ПРОВЕРКА ПОРТОВ =====
+
+Открытые listening-порты:
+Netid State  Recv-Q Send-Q  Local Address:Port Peer Address:Port
+udp   UNCONN 0      0          127.0.0.54:53        0.0.0.0:*   
+udp   UNCONN 0      0       127.0.0.53%lo:53        0.0.0.0:*   
+udp   UNCONN 0      0      10.255.255.254:53        0.0.0.0:*   
+udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*   
+udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*   
+udp   UNCONN 0      0               [::1]:323          [::]:*   
+udp   UNCONN 0      0               [::1]:323          [::]:*   
+tcp   LISTEN 0      4096       127.0.0.54:53        0.0.0.0:*   
+tcp   LISTEN 0      511           0.0.0.0:80        0.0.0.0:*   
+tcp   LISTEN 0      4096          0.0.0.0:22        0.0.0.0:*   
+tcp   LISTEN 0      4096    127.0.0.53%lo:53        0.0.0.0:*   
+tcp   LISTEN 0      1000   10.255.255.254:53        0.0.0.0:*   
+tcp   LISTEN 0      200         127.0.0.1:5432      0.0.0.0:*   
+tcp   LISTEN 0      511              [::]:80           [::]:*   
+tcp   LISTEN 0      4096             [::]:22           [::]:*   
+
+Проверка порта 80:
+tcp   LISTEN 0      511           0.0.0.0:80        0.0.0.0:*   
+tcp   LISTEN 0      511              [::]:80           [::]:*   
+ОК: порт 80 слушается
+
+===== ПРОВЕРКА HTTP =====
+
+URL: http://localhost
+HTTP-код: 200
+ОК: успешный ответ
+
+===== ПРОВЕРКА ЛОГОВ СЛУЖБЫ =====
+
+Служба: nginx
+
+Последние записи журнала:
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: nginx.service: Deactivated successfully.
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+-- Boot 024e2bae7518498ea64b7a7739133cd9 --
+Jun 14 23:39:45 DESKTOP-OP9JNCS systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Jun 14 23:39:45 DESKTOP-OP9JNCS systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+Jun 15 01:08:06 DESKTOP-OP9JNCS systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+Jun 15 01:08:06 DESKTOP-OP9JNCS systemd[1]: nginx.service: Deactivated successfully.
+Jun 15 01:08:06 DESKTOP-OP9JNCS systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+-- Boot dd888e58fe1044b0acd41d85f65478d0 --
+Jun 15 13:38:26 DESKTOP-OP9JNCS systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Jun 15 13:38:26 DESKTOP-OP9JNCS systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+
+Результат:
+ОК: явных ошибок в последних логах не найдено
+
+========================================
+ИТОГ: комплексная проверка завершена
+========================================
+========================================
+FULL LINUX HEALTHCHECK REPORT
+========================================
+
+Дата проверки:
+2026-06-15 21:00:01
+
+===== SYSTEM REPORT =====
+
+User:
+	kirill_work_devops
+
+Hostname:
+	DESKTOP-OP9JNCS
+
+Uptime:
+	 21:00:01 up  7:21,  1 user,  load average: 0.00, 0.00, 0.00
+
+Disk usage for /:
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdd       1007G  1.9G  954G   1% /
+
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi       644Mi        14Gi        22Mi       326Mi        14Gi
+Swap:          4.0Gi          0B       4.0Gi
+
+
+===== DISK CHECK =====
+
+
+Раздел: /
+Использовано: 1%
+ОК: места на диске достаточно
+
+===== ПРОВЕРКА ПАМЯТИ =====
+
+Оперативная память:
+Всего: 15Gi
+Использовано: 645Mi
+Процент использования: 4%
+
+Swap:
+Всего: 4.0Gi
+Использовано: 0B
+
+ОК: использование оперативной памяти в норме
+
+SERVICE CHECK: nginx
+OK: служба nginx работает
+
+===== ПРОВЕРКА NGINX =====
+Проверка наличия nginx:
+ОК: nginx установлен
+
+Проверка состояния службы:
+ОК: служба nginx активна
+
+Проверка авто-запуска:
+ОК: nginx включён в автозапуск
+
+ИТОГ: nginx работает корректно
+
+===== СЕТЕВОЙ ОТЧЁТ =====
+IP-адреса:
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet 10.255.255.254/32 brd 10.255.255.254 scope global lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host proto kernel_lo 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1280 qdisc mq state UP group default qlen 1000
+    link/ether 00:15:5d:14:27:25 brd ff:ff:ff:ff:ff:ff
+    altname enx00155d142725
+    inet 172.30.173.241/20 brd 172.30.175.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::215:5dff:fe14:2725/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+
+Маршруты:
+default via 172.30.160.1 dev eth0 proto kernel 
+172.30.160.0/20 dev eth0 proto kernel scope link src 172.30.173.241 
+
+Проверка доступа к внешнему IP:
+ОК: внешний IP доступен
+
+Проверка DNS:
+ОК: доменное имя успешно резолвится
+
+===== ПРОВЕРКА ПОРТОВ =====
+
+Открытые listening-порты:
+Netid State  Recv-Q Send-Q  Local Address:Port Peer Address:Port
+udp   UNCONN 0      0          127.0.0.54:53        0.0.0.0:*   
+udp   UNCONN 0      0       127.0.0.53%lo:53        0.0.0.0:*   
+udp   UNCONN 0      0      10.255.255.254:53        0.0.0.0:*   
+udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*   
+udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*   
+udp   UNCONN 0      0               [::1]:323          [::]:*   
+udp   UNCONN 0      0               [::1]:323          [::]:*   
+tcp   LISTEN 0      4096       127.0.0.54:53        0.0.0.0:*   
+tcp   LISTEN 0      511           0.0.0.0:80        0.0.0.0:*   
+tcp   LISTEN 0      4096          0.0.0.0:22        0.0.0.0:*   
+tcp   LISTEN 0      4096    127.0.0.53%lo:53        0.0.0.0:*   
+tcp   LISTEN 0      1000   10.255.255.254:53        0.0.0.0:*   
+tcp   LISTEN 0      200         127.0.0.1:5432      0.0.0.0:*   
+tcp   LISTEN 0      511              [::]:80           [::]:*   
+tcp   LISTEN 0      4096             [::]:22           [::]:*   
+
+Проверка порта 80:
+tcp   LISTEN 0      511           0.0.0.0:80        0.0.0.0:*   
+tcp   LISTEN 0      511              [::]:80           [::]:*   
+ОК: порт 80 слушается
+
+===== ПРОВЕРКА HTTP =====
+
+URL: http://localhost
+HTTP-код: 200
+ОК: успешный ответ
+
+===== ПРОВЕРКА ЛОГОВ СЛУЖБЫ =====
+
+Служба: nginx
+
+Последние записи журнала:
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: nginx.service: Deactivated successfully.
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+-- Boot 024e2bae7518498ea64b7a7739133cd9 --
+Jun 14 23:39:45 DESKTOP-OP9JNCS systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Jun 14 23:39:45 DESKTOP-OP9JNCS systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+Jun 15 01:08:06 DESKTOP-OP9JNCS systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+Jun 15 01:08:06 DESKTOP-OP9JNCS systemd[1]: nginx.service: Deactivated successfully.
+Jun 15 01:08:06 DESKTOP-OP9JNCS systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+-- Boot dd888e58fe1044b0acd41d85f65478d0 --
+Jun 15 13:38:26 DESKTOP-OP9JNCS systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Jun 15 13:38:26 DESKTOP-OP9JNCS systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+
+Результат:
+ОК: явных ошибок в последних логах не найдено
+
+========================================
+ИТОГ: комплексная проверка завершена
+========================================
+========================================
+FULL LINUX HEALTHCHECK REPORT
+========================================
+
+Дата проверки:
+2026-06-15 22:00:01
+
+===== SYSTEM REPORT =====
+
+User:
+	kirill_work_devops
+
+Hostname:
+	DESKTOP-OP9JNCS
+
+Uptime:
+	 22:00:01 up  8:21,  1 user,  load average: 0.00, 0.00, 0.00
+
+Disk usage for /:
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdd       1007G  1.9G  954G   1% /
+
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi       650Mi        14Gi        22Mi       327Mi        14Gi
+Swap:          4.0Gi          0B       4.0Gi
+
+
+===== DISK CHECK =====
+
+
+Раздел: /
+Использовано: 1%
+ОК: места на диске достаточно
+
+===== ПРОВЕРКА ПАМЯТИ =====
+
+Оперативная память:
+Всего: 15Gi
+Использовано: 652Mi
+Процент использования: 4%
+
+Swap:
+Всего: 4.0Gi
+Использовано: 0B
+
+ОК: использование оперативной памяти в норме
+
+SERVICE CHECK: nginx
+OK: служба nginx работает
+
+===== ПРОВЕРКА NGINX =====
+Проверка наличия nginx:
+ОК: nginx установлен
+
+Проверка состояния службы:
+ОК: служба nginx активна
+
+Проверка авто-запуска:
+ОК: nginx включён в автозапуск
+
+ИТОГ: nginx работает корректно
+
+===== СЕТЕВОЙ ОТЧЁТ =====
+IP-адреса:
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet 10.255.255.254/32 brd 10.255.255.254 scope global lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host proto kernel_lo 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1280 qdisc mq state UP group default qlen 1000
+    link/ether 00:15:5d:14:27:25 brd ff:ff:ff:ff:ff:ff
+    altname enx00155d142725
+    inet 172.30.173.241/20 brd 172.30.175.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::215:5dff:fe14:2725/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+
+Маршруты:
+default via 172.30.160.1 dev eth0 proto kernel 
+172.30.160.0/20 dev eth0 proto kernel scope link src 172.30.173.241 
+
+Проверка доступа к внешнему IP:
+ОК: внешний IP доступен
+
+Проверка DNS:
+ОК: доменное имя успешно резолвится
+
+===== ПРОВЕРКА ПОРТОВ =====
+
+Открытые listening-порты:
+Netid State  Recv-Q Send-Q  Local Address:Port Peer Address:Port
+udp   UNCONN 0      0          127.0.0.54:53        0.0.0.0:*   
+udp   UNCONN 0      0       127.0.0.53%lo:53        0.0.0.0:*   
+udp   UNCONN 0      0      10.255.255.254:53        0.0.0.0:*   
+udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*   
+udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*   
+udp   UNCONN 0      0               [::1]:323          [::]:*   
+udp   UNCONN 0      0               [::1]:323          [::]:*   
+tcp   LISTEN 0      4096       127.0.0.54:53        0.0.0.0:*   
+tcp   LISTEN 0      511           0.0.0.0:80        0.0.0.0:*   
+tcp   LISTEN 0      4096          0.0.0.0:22        0.0.0.0:*   
+tcp   LISTEN 0      4096    127.0.0.53%lo:53        0.0.0.0:*   
+tcp   LISTEN 0      1000   10.255.255.254:53        0.0.0.0:*   
+tcp   LISTEN 0      200         127.0.0.1:5432      0.0.0.0:*   
+tcp   LISTEN 0      511              [::]:80           [::]:*   
+tcp   LISTEN 0      4096             [::]:22           [::]:*   
+
+Проверка порта 80:
+tcp   LISTEN 0      511           0.0.0.0:80        0.0.0.0:*   
+tcp   LISTEN 0      511              [::]:80           [::]:*   
+ОК: порт 80 слушается
+
+===== ПРОВЕРКА HTTP =====
+
+URL: http://localhost
+HTTP-код: 200
+ОК: успешный ответ
+
+===== ПРОВЕРКА ЛОГОВ СЛУЖБЫ =====
+
+Служба: nginx
+
+Последние записи журнала:
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: nginx.service: Deactivated successfully.
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+-- Boot 024e2bae7518498ea64b7a7739133cd9 --
+Jun 14 23:39:45 DESKTOP-OP9JNCS systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Jun 14 23:39:45 DESKTOP-OP9JNCS systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+Jun 15 01:08:06 DESKTOP-OP9JNCS systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+Jun 15 01:08:06 DESKTOP-OP9JNCS systemd[1]: nginx.service: Deactivated successfully.
+Jun 15 01:08:06 DESKTOP-OP9JNCS systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+-- Boot dd888e58fe1044b0acd41d85f65478d0 --
+Jun 15 13:38:26 DESKTOP-OP9JNCS systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Jun 15 13:38:26 DESKTOP-OP9JNCS systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+
+Результат:
+ОК: явных ошибок в последних логах не найдено
+
+========================================
+ИТОГ: комплексная проверка завершена
+========================================
+========================================
+FULL LINUX HEALTHCHECK REPORT
+========================================
+
+Дата проверки:
+2026-06-15 23:00:01
+
+===== SYSTEM REPORT =====
+
+User:
+	kirill_work_devops
+
+Hostname:
+	DESKTOP-OP9JNCS
+
+Uptime:
+	 23:00:01 up  9:21,  1 user,  load average: 0.00, 0.00, 0.00
+
+Disk usage for /:
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdd       1007G  1.9G  954G   1% /
+
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi       661Mi        14Gi        22Mi       328Mi        14Gi
+Swap:          4.0Gi          0B       4.0Gi
+
+
+===== DISK CHECK =====
+
+
+Раздел: /
+Использовано: 1%
+ОК: места на диске достаточно
+
+===== ПРОВЕРКА ПАМЯТИ =====
+
+Оперативная память:
+Всего: 15Gi
+Использовано: 664Mi
+Процент использования: 4%
+
+Swap:
+Всего: 4.0Gi
+Использовано: 0B
+
+ОК: использование оперативной памяти в норме
+
+SERVICE CHECK: nginx
+OK: служба nginx работает
+
+===== ПРОВЕРКА NGINX =====
+Проверка наличия nginx:
+ОК: nginx установлен
+
+Проверка состояния службы:
+ОК: служба nginx активна
+
+Проверка авто-запуска:
+ОК: nginx включён в автозапуск
+
+ИТОГ: nginx работает корректно
+
+===== СЕТЕВОЙ ОТЧЁТ =====
+IP-адреса:
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet 10.255.255.254/32 brd 10.255.255.254 scope global lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host proto kernel_lo 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1280 qdisc mq state UP group default qlen 1000
+    link/ether 00:15:5d:14:27:25 brd ff:ff:ff:ff:ff:ff
+    altname enx00155d142725
+    inet 172.30.173.241/20 brd 172.30.175.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::215:5dff:fe14:2725/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+
+Маршруты:
+default via 172.30.160.1 dev eth0 proto kernel 
+172.30.160.0/20 dev eth0 proto kernel scope link src 172.30.173.241 
+
+Проверка доступа к внешнему IP:
+ОК: внешний IP доступен
+
+Проверка DNS:
+ОК: доменное имя успешно резолвится
+
+===== ПРОВЕРКА ПОРТОВ =====
+
+Открытые listening-порты:
+Netid State  Recv-Q Send-Q  Local Address:Port Peer Address:Port
+udp   UNCONN 0      0          127.0.0.54:53        0.0.0.0:*   
+udp   UNCONN 0      0       127.0.0.53%lo:53        0.0.0.0:*   
+udp   UNCONN 0      0      10.255.255.254:53        0.0.0.0:*   
+udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*   
+udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*   
+udp   UNCONN 0      0               [::1]:323          [::]:*   
+udp   UNCONN 0      0               [::1]:323          [::]:*   
+tcp   LISTEN 0      4096       127.0.0.54:53        0.0.0.0:*   
+tcp   LISTEN 0      511           0.0.0.0:80        0.0.0.0:*   
+tcp   LISTEN 0      4096          0.0.0.0:22        0.0.0.0:*   
+tcp   LISTEN 0      4096    127.0.0.53%lo:53        0.0.0.0:*   
+tcp   LISTEN 0      1000   10.255.255.254:53        0.0.0.0:*   
+tcp   LISTEN 0      200         127.0.0.1:5432      0.0.0.0:*   
+tcp   LISTEN 0      511              [::]:80           [::]:*   
+tcp   LISTEN 0      4096             [::]:22           [::]:*   
+
+Проверка порта 80:
+tcp   LISTEN 0      511           0.0.0.0:80        0.0.0.0:*   
+tcp   LISTEN 0      511              [::]:80           [::]:*   
+ОК: порт 80 слушается
+
+===== ПРОВЕРКА HTTP =====
+
+URL: http://localhost
+HTTP-код: 200
+ОК: успешный ответ
+
+===== ПРОВЕРКА ЛОГОВ СЛУЖБЫ =====
+
+Служба: nginx
+
+Последние записи журнала:
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: nginx.service: Deactivated successfully.
+Jun 12 12:37:03 DESKTOP-OP9JNCS systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+-- Boot 024e2bae7518498ea64b7a7739133cd9 --
+Jun 14 23:39:45 DESKTOP-OP9JNCS systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Jun 14 23:39:45 DESKTOP-OP9JNCS systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+Jun 15 01:08:06 DESKTOP-OP9JNCS systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+Jun 15 01:08:06 DESKTOP-OP9JNCS systemd[1]: nginx.service: Deactivated successfully.
+Jun 15 01:08:06 DESKTOP-OP9JNCS systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+-- Boot dd888e58fe1044b0acd41d85f65478d0 --
+Jun 15 13:38:26 DESKTOP-OP9JNCS systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Jun 15 13:38:26 DESKTOP-OP9JNCS systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+
+Результат:
+ОК: явных ошибок в последних логах не найдено
+
+========================================
+ИТОГ: комплексная проверка завершена
+========================================
+========================================
+FULL LINUX HEALTHCHECK REPORT
+========================================
+
+Дата проверки:
+2026-08-03 01:00:01
+
+===== SYSTEM REPORT =====
+
+User:
+	kirill_work_devops
+
+Hostname:
+	DESKTOP-OP9JNCS
+
+Uptime:
+	 01:00:01 up 3 min,  1 user,  load average: 0.00, 0.00, 0.00
+
+Disk usage for /:
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdd       1007G  1.9G  954G   1% /
+
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi       610Mi        14Gi        20Mi       564Mi        14Gi
+Swap:          4.0Gi          0B       4.0Gi
+
+
+===== DISK CHECK =====
+
+
+Раздел: /
+Использовано: 1%
+ОК: места на диске достаточно
+
+===== ПРОВЕРКА ПАМЯТИ =====
+
+Оперативная память:
+Всего: 15Gi
+Использовано: 614Mi
+Процент использования: 3%
+
+Swap:
+Всего: 4.0Gi
+Использовано: 0B
+
+ОК: использование оперативной памяти в норме
+
+SERVICE CHECK: nginx
+OK: служба nginx работает
+
+===== ПРОВЕРКА NGINX =====
+Проверка наличия nginx:
+ОК: nginx установлен
+
+Проверка состояния службы:
+ОК: служба nginx активна
+
+Проверка авто-запуска:
+ОК: nginx включён в автозапуск
+
+ИТОГ: nginx работает корректно
+
+===== СЕТЕВОЙ ОТЧЁТ =====
+IP-адреса:
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet 10.255.255.254/32 brd 10.255.255.254 scope global lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host proto kernel_lo 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1404 qdisc mq state UP group default qlen 1000
+    link/ether 00:15:5d:65:37:90 brd ff:ff:ff:ff:ff:ff
+    altname enx00155d653790
+    inet 172.30.173.241/20 brd 172.30.175.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::215:5dff:fe65:3790/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+
+Маршруты:
+default via 172.30.160.1 dev eth0 proto kernel 
+172.30.160.0/20 dev eth0 proto kernel scope link src 172.30.173.241 
+
+Проверка доступа к внешнему IP:
+ОК: внешний IP доступен
+
+Проверка DNS:
+ОК: доменное имя успешно резолвится
+
+===== ПРОВЕРКА ПОРТОВ =====
+
+Открытые listening-порты:
+Netid State  Recv-Q Send-Q  Local Address:Port Peer Address:Port
+udp   UNCONN 0      0          127.0.0.54:53        0.0.0.0:*   
+udp   UNCONN 0      0       127.0.0.53%lo:53        0.0.0.0:*   
+udp   UNCONN 0      0      10.255.255.254:53        0.0.0.0:*   
+udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*   
+udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*   
+udp   UNCONN 0      0               [::1]:323          [::]:*   
+udp   UNCONN 0      0               [::1]:323          [::]:*   
+tcp   LISTEN 0      1000   10.255.255.254:53        0.0.0.0:*   
+tcp   LISTEN 0      200         127.0.0.1:5432      0.0.0.0:*   
+tcp   LISTEN 0      4096       127.0.0.54:53        0.0.0.0:*   
+tcp   LISTEN 0      4096          0.0.0.0:22        0.0.0.0:*   
+tcp   LISTEN 0      511           0.0.0.0:80        0.0.0.0:*   
+tcp   LISTEN 0      4096    127.0.0.53%lo:53        0.0.0.0:*   
+tcp   LISTEN 0      4096             [::]:22           [::]:*   
+tcp   LISTEN 0      511              [::]:80           [::]:*   
+
+Проверка порта 80:
+tcp   LISTEN 0      511           0.0.0.0:80        0.0.0.0:*   
+tcp   LISTEN 0      511              [::]:80           [::]:*   
+ОК: порт 80 слушается
+
+===== ПРОВЕРКА HTTP =====
+
+URL: http://localhost
+HTTP-код: 200
+ОК: успешный ответ
+
+===== ПРОВЕРКА ЛОГОВ СЛУЖБЫ =====
+
+Служба: nginx
+
+Последние записи журнала:
+Jun 15 01:08:06 DESKTOP-OP9JNCS systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+Jun 15 01:08:06 DESKTOP-OP9JNCS systemd[1]: nginx.service: Deactivated successfully.
+Jun 15 01:08:06 DESKTOP-OP9JNCS systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+-- Boot dd888e58fe1044b0acd41d85f65478d0 --
+Jun 15 13:38:26 DESKTOP-OP9JNCS systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Jun 15 13:38:26 DESKTOP-OP9JNCS systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+Jun 15 23:16:19 DESKTOP-OP9JNCS systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+Jun 15 23:16:19 DESKTOP-OP9JNCS systemd[1]: nginx.service: Deactivated successfully.
+Jun 15 23:16:19 DESKTOP-OP9JNCS systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+-- Boot 8af7d2d9cecf4af599791e962d7cdf89 --
+Aug 03 00:56:11 DESKTOP-OP9JNCS systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Aug 03 00:56:11 DESKTOP-OP9JNCS systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+
+Результат:
+ОК: явных ошибок в последних логах не найдено
+
+========================================
+ИТОГ: комплексная проверка завершена
+========================================
+========================================
+FULL LINUX HEALTHCHECK REPORT
+========================================
+
+Дата проверки:
+2026-08-03 16:00:01
+
+===== SYSTEM REPORT =====
+
+User:
+	kirill_work_devops
+
+Hostname:
+	DESKTOP-OP9JNCS
+
+Uptime:
+	 16:00:01 up 21 min,  1 user,  load average: 0.00, 0.00, 0.00
+
+Disk usage for /:
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdd       1007G  1.9G  954G   1% /
+
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi       626Mi        14Gi        20Mi       218Mi        14Gi
+Swap:          4.0Gi          0B       4.0Gi
+
+
+===== DISK CHECK =====
+
+
+Раздел: /
+Использовано: 1%
+ОК: места на диске достаточно
+
+===== ПРОВЕРКА ПАМЯТИ =====
+
+Оперативная память:
+Всего: 15Gi
+Использовано: 627Mi
+Процент использования: 3%
+
+Swap:
+Всего: 4.0Gi
+Использовано: 0B
+
+ОК: использование оперативной памяти в норме
+
+SERVICE CHECK: nginx
+OK: служба nginx работает
+
+===== ПРОВЕРКА NGINX =====
+Проверка наличия nginx:
+ОК: nginx установлен
+
+Проверка состояния службы:
+ОК: служба nginx активна
+
+Проверка авто-запуска:
+ОК: nginx включён в автозапуск
+
+ИТОГ: nginx работает корректно
+
+===== СЕТЕВОЙ ОТЧЁТ =====
+IP-адреса:
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet 10.255.255.254/32 brd 10.255.255.254 scope global lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host proto kernel_lo 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1280 qdisc mq state UP group default qlen 1000
+    link/ether 00:15:5d:b7:7c:34 brd ff:ff:ff:ff:ff:ff
+    altname enx00155db77c34
+    inet 172.30.173.241/20 brd 172.30.175.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::215:5dff:feb7:7c34/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+
+Маршруты:
+default via 172.30.160.1 dev eth0 proto kernel 
+172.30.160.0/20 dev eth0 proto kernel scope link src 172.30.173.241 
+
+Проверка доступа к внешнему IP:
+ОК: внешний IP доступен
+
+Проверка DNS:
+ОК: доменное имя успешно резолвится
+
+===== ПРОВЕРКА ПОРТОВ =====
+
+Открытые listening-порты:
+Netid State  Recv-Q Send-Q  Local Address:Port Peer Address:Port
+udp   UNCONN 0      0          127.0.0.54:53        0.0.0.0:*   
+udp   UNCONN 0      0       127.0.0.53%lo:53        0.0.0.0:*   
+udp   UNCONN 0      0      10.255.255.254:53        0.0.0.0:*   
+udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*   
+udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*   
+udp   UNCONN 0      0               [::1]:323          [::]:*   
+udp   UNCONN 0      0               [::1]:323          [::]:*   
+tcp   LISTEN 0      200         127.0.0.1:5432      0.0.0.0:*   
+tcp   LISTEN 0      511           0.0.0.0:80        0.0.0.0:*   
+tcp   LISTEN 0      4096          0.0.0.0:22        0.0.0.0:*   
+tcp   LISTEN 0      4096       127.0.0.54:53        0.0.0.0:*   
+tcp   LISTEN 0      1000   10.255.255.254:53        0.0.0.0:*   
+tcp   LISTEN 0      4096    127.0.0.53%lo:53        0.0.0.0:*   
+tcp   LISTEN 0      511              [::]:80           [::]:*   
+tcp   LISTEN 0      4096             [::]:22           [::]:*   
+
+Проверка порта 80:
+tcp   LISTEN 0      511           0.0.0.0:80        0.0.0.0:*   
+tcp   LISTEN 0      511              [::]:80           [::]:*   
+ОК: порт 80 слушается
+
+===== ПРОВЕРКА HTTP =====
+
+URL: http://localhost
+HTTP-код: 200
+ОК: успешный ответ
+
+===== ПРОВЕРКА ЛОГОВ СЛУЖБЫ =====
+
+Служба: nginx
+
+Последние записи журнала:
+Jun 15 23:16:19 DESKTOP-OP9JNCS systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+Jun 15 23:16:19 DESKTOP-OP9JNCS systemd[1]: nginx.service: Deactivated successfully.
+Jun 15 23:16:19 DESKTOP-OP9JNCS systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+-- Boot 8af7d2d9cecf4af599791e962d7cdf89 --
+Aug 03 00:56:11 DESKTOP-OP9JNCS systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Aug 03 00:56:11 DESKTOP-OP9JNCS systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+Aug 03 01:45:13 DESKTOP-OP9JNCS systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+Aug 03 01:45:13 DESKTOP-OP9JNCS systemd[1]: nginx.service: Deactivated successfully.
+Aug 03 01:45:13 DESKTOP-OP9JNCS systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+-- Boot 87929118e5be4602845a666a8a2d6aea --
+Aug 03 15:38:08 DESKTOP-OP9JNCS systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Aug 03 15:38:08 DESKTOP-OP9JNCS systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+
+Результат:
+ОК: явных ошибок в последних логах не найдено
+
+========================================
+ИТОГ: комплексная проверка завершена
+========================================
+========================================
+FULL LINUX HEALTHCHECK REPORT
+========================================
+
+Дата проверки:
+2026-08-03 17:00:01
+
+===== SYSTEM REPORT =====
+
+User:
+	kirill_work_devops
+
+Hostname:
+	DESKTOP-OP9JNCS
+
+Uptime:
+	 17:00:01 up  1:21,  1 user,  load average: 0.00, 0.00, 0.00
+
+Disk usage for /:
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdd       1007G  1.9G  954G   1% /
+
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi       635Mi        14Gi        20Mi       331Mi        14Gi
+Swap:          4.0Gi          0B       4.0Gi
+
+
+===== DISK CHECK =====
+
+
+Раздел: /
+Использовано: 1%
+ОК: места на диске достаточно
+
+===== ПРОВЕРКА ПАМЯТИ =====
+
+Оперативная память:
+Всего: 15Gi
+Использовано: 636Mi
+Процент использования: 3%
+
+Swap:
+Всего: 4.0Gi
+Использовано: 0B
+
+ОК: использование оперативной памяти в норме
+
+SERVICE CHECK: nginx
+OK: служба nginx работает
+
+===== ПРОВЕРКА NGINX =====
+Проверка наличия nginx:
+ОК: nginx установлен
+
+Проверка состояния службы:
+ОК: служба nginx активна
+
+Проверка авто-запуска:
+ОК: nginx включён в автозапуск
+
+ИТОГ: nginx работает корректно
+
+===== СЕТЕВОЙ ОТЧЁТ =====
+IP-адреса:
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet 10.255.255.254/32 brd 10.255.255.254 scope global lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host proto kernel_lo 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1280 qdisc mq state UP group default qlen 1000
+    link/ether 00:15:5d:b7:7c:34 brd ff:ff:ff:ff:ff:ff
+    altname enx00155db77c34
+    inet 172.30.173.241/20 brd 172.30.175.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::215:5dff:feb7:7c34/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+
+Маршруты:
+default via 172.30.160.1 dev eth0 proto kernel 
+172.30.160.0/20 dev eth0 proto kernel scope link src 172.30.173.241 
+
+Проверка доступа к внешнему IP:
+ОК: внешний IP доступен
+
+Проверка DNS:
+ОК: доменное имя успешно резолвится
+
+===== ПРОВЕРКА ПОРТОВ =====
+
+Открытые listening-порты:
+Netid State  Recv-Q Send-Q  Local Address:Port Peer Address:Port
+udp   UNCONN 0      0          127.0.0.54:53        0.0.0.0:*   
+udp   UNCONN 0      0       127.0.0.53%lo:53        0.0.0.0:*   
+udp   UNCONN 0      0      10.255.255.254:53        0.0.0.0:*   
+udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*   
+udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*   
+udp   UNCONN 0      0               [::1]:323          [::]:*   
+udp   UNCONN 0      0               [::1]:323          [::]:*   
+tcp   LISTEN 0      200         127.0.0.1:5432      0.0.0.0:*   
+tcp   LISTEN 0      511           0.0.0.0:80        0.0.0.0:*   
+tcp   LISTEN 0      4096          0.0.0.0:22        0.0.0.0:*   
+tcp   LISTEN 0      4096       127.0.0.54:53        0.0.0.0:*   
+tcp   LISTEN 0      1000   10.255.255.254:53        0.0.0.0:*   
+tcp   LISTEN 0      4096    127.0.0.53%lo:53        0.0.0.0:*   
+tcp   LISTEN 0      511              [::]:80           [::]:*   
+tcp   LISTEN 0      4096             [::]:22           [::]:*   
+
+Проверка порта 80:
+tcp   LISTEN 0      511           0.0.0.0:80        0.0.0.0:*   
+tcp   LISTEN 0      511              [::]:80           [::]:*   
+ОК: порт 80 слушается
+
+===== ПРОВЕРКА HTTP =====
+
+URL: http://localhost
+HTTP-код: 200
+ОК: успешный ответ
+
+===== ПРОВЕРКА ЛОГОВ СЛУЖБЫ =====
+
+Служба: nginx
+
+Последние записи журнала:
+Jun 15 23:16:19 DESKTOP-OP9JNCS systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+Jun 15 23:16:19 DESKTOP-OP9JNCS systemd[1]: nginx.service: Deactivated successfully.
+Jun 15 23:16:19 DESKTOP-OP9JNCS systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+-- Boot 8af7d2d9cecf4af599791e962d7cdf89 --
+Aug 03 00:56:11 DESKTOP-OP9JNCS systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Aug 03 00:56:11 DESKTOP-OP9JNCS systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+Aug 03 01:45:13 DESKTOP-OP9JNCS systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+Aug 03 01:45:13 DESKTOP-OP9JNCS systemd[1]: nginx.service: Deactivated successfully.
+Aug 03 01:45:13 DESKTOP-OP9JNCS systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+-- Boot 87929118e5be4602845a666a8a2d6aea --
+Aug 03 15:38:08 DESKTOP-OP9JNCS systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+Aug 03 15:38:08 DESKTOP-OP9JNCS systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+
+Результат:
+ОК: явных ошибок в последних логах не найдено
+
+========================================
+ИТОГ: комплексная проверка завершена
+========================================

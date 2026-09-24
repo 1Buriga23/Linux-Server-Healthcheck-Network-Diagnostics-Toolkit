@@ -1,0 +1,21 @@
+OK: служба nginx работает
+===== SYSTEM REPORT =====
+
+User:
+	kirill_work_devops
+
+Hostname:
+	DESKTOP-OP9JNCS
+
+Uptime:
+	 20:15:43 up  1:41,  1 user,  load average: 0.00, 0.00, 0.00
+
+Disk usage for /:
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdd       1007G  1.7G  954G   1% /
+
+Memory usage:
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi       597Mi        14Gi       3.5Mi       216Mi        14Gi
+Swap:          4.0Gi          0B       4.0Gi
+
